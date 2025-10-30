@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>じゃんけん</title>
+  <link rel="stylesheet" href="/static/work07/style.css">
+</head>
+<body>
+  <h1>じゃんけん</h1>
+  <p>あなた：{{ user_hand }} / コンピュータ：{{ cpu_hand }}</p>
+  <p>結果：<strong>{{ result }}</strong></p>
+
+  <div class="buttons">
+    <a href="{% url 'janken' %}?hand=グー">✊ グー</a>
+    <a href="{% url 'janken' %}?hand=チョキ">✌ チョキ</a>
+    <a href="{% url 'janken' %}?hand=パー">🖐 パー</a>
+  </div>
+  <a href="{% url 'index' %}">← トップに戻る</a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>メモ編集</title>
+    <link rel="stylesheet" href="{% static 'work08/style.css' %}">
+</head>
+<body>
+    <h1>📝 メモ編集</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>タイトル: <input type="text" name="title" value="{{ memo.title }}"></p>
+        <p>内容:</p>
+        <textarea name="content" rows="10" cols="50">{{ memo.content }}</textarea></p>
+        <p>写真: <input type="file" name="photo"></p>
+        {% if memo.photo %}
+            <p>現在の写真:</p>
+            <img src="{{ memo.photo.url }}" alt="memo photo" width="200">
+        {% endif %}
+        <button type="submit">保存</button>
+    </form>
+    
+
+    <a href="{% url 'memo_list' %}">一覧に戻る</a>
+</body>
+</html>

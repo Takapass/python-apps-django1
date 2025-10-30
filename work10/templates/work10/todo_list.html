@@ -1,0 +1,18 @@
+<h2>TODO一覧</h2>
+
+<p>ログイン中: {{ user.username }}</p>
+<a href="{% url 'logout' %}">ログアウト</a> |
+<a href="{% url 'add_todo' %}">新規追加</a>
+
+<ul>
+  {% for todo in todos %}
+    <li>
+      {{ todo.task }} - {{ todo.user.username }}
+      {% if todo.user == user %}
+        <a href="{% url 'delete_todo' todo.id %}">削除</a>
+      {% endif %}
+    </li>
+  {% empty %}
+    <li>TODOはまだありません。</li>
+  {% endfor %}
+</ul>

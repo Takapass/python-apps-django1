@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Hi & Low</title>
+  <link rel="stylesheet" href="/static/work07/style.css">
+</head>
+<body>
+  <h1>Hi & Low ゲーム</h1>
+  <p>現在のカード：{{ current }}</p>
+  <div class="buttons">
+    <a href="{% url 'hilow' %}?choice=hi">High!</a>
+    <a href="{% url 'hilow' %}?choice=low">Low!</a>
+  </div>
+
+  {% if result %}
+    <p>次のカード：{{ next }}</p>
+    <p>結果：<strong>{{ result }}</strong></p>
+  {% endif %}
+  
+  <a href="{% url 'index' %}">← トップに戻る</a>
+</body>
+</html>

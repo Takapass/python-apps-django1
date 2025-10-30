@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>TODO一覧</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; }
+    h1 { color: #333; }
+    table { border-collapse: collapse; width: 80%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    .completed { text-decoration: line-through; color: gray; }
+    .overdue { background-color: #ffe6e6; }
+  </style>
+</head>
+<body>
+  <h1>TODO一覧</h1>
+
+  {% if todos %}
+  <table>
+    <tr>
+      <th>完了</th>
+      <th>タスク名</th>
+      <th>期限日</th>
+      <th>登録日</th>
+    </tr>
+    {% for todo in todos %}
+    <tr class="{% if not todo.is_completed and todo.due_date < today %}overdue{% endif %}">
+      <td>{{ todo.is_completed|yesno:"完了,未完了" }}</td>
+      <td class="{% if todo.is_completed %}completed{% endif %}">{{ todo.title }}</td>
+      <td>{{ todo.due_date }}</td>
+      <td>{{ todo.created_at|date:"Y-m-d" }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>まだタスクが登録されていません。</p>
+  {% endif %}
+</body>
+</html>

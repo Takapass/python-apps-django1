@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>おみくじ</title>
+  <link rel="stylesheet" href="/static/work07/style.css">
+</head>
+<body>
+  <h1>おみくじ</h1>
+  <p>結果：<strong>{{ result }}</strong></p>
+  <form action="{% url 'omikuji' %}" method="get">
+    <button type="submit">もう一度！</button>
+  </form>
+  <a href="{% url 'index' %}">← トップに戻る</a>
+</body>
+</html>

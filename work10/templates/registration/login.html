@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f6f8fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        form {
+            background: white;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin-bottom: 1em;
+            padding: 0.6em;
+            font-size: 1em;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.6em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h2>ログイン</h2>
+        {{ form.as_p }}
+        <button type="submit">ログイン</button>
+    </form>
+</body>
+</html>

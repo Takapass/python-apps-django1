@@ -1,0 +1,36 @@
+body {
+    font-family: "Hiragino Sans", "Meiryo", sans-serif;
+    text-align: center;
+    background: #f8f9fa;
+    color: #333;
+    padding: 40px;
+  }
+  
+  h1 {
+    color: #0066cc;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  a, button {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+  }
+  
+  a:hover, button:hover {
+    background: #0056b3;
+  }
+  
