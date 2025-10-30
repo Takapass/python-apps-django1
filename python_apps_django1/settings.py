@@ -32,7 +32,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-uj8#(!q5y=yj0*#-y^+hoy#h#&jmtfm9w4*tv=cburqtxn91m5"
+SECRET_KEY = (
+    "django-insecure-uj8#(!q5y=yj0*#-y^+hoy#h#&jmtfm9w4*tv=cburqtxn91m5"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -100,11 +102,11 @@ DATABASES = {
         "OPTIONS": {
             "charset": "utf8mb4",
         },
-        #"NAME": DATABASE_NAME,
-        #"USER": DATABASE_USER,
-        #"PASSWORD": DATABASE_PASSWORD,
-        #"HOST": DATABASE_HOST,
-        #"PORT": DATABASE_PORT,
+        # "NAME": DATABASE_NAME,
+        # "USER": DATABASE_USER,
+        # "PASSWORD": DATABASE_PASSWORD,
+        # "HOST": DATABASE_HOST,
+        # "PORT": DATABASE_PORT,
     }
 }
 
@@ -114,19 +116,24 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "UserAttributeSimilarityValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "MinimumLengthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "CommonPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "NumericPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation."
+        "MinimumLengthValidator",
         "OPTIONS": {"min_length": 4},
     },
 ]
