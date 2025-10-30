@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
+
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -35,7 +37,7 @@ SECRET_KEY = "django-insecure-uj8#(!q5y=yj0*#-y^+hoy#h#&jmtfm9w4*tv=cburqtxn91m5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -50,8 +52,8 @@ INSTALLED_APPS = [
     "work06",
     "work07",
     "work08",
-    'work09',
-    'work10',
+    "work09",
+    "work10",
 ]
 
 MIDDLEWARE = [
@@ -69,7 +71,7 @@ ROOT_URLCONF = "python_apps_django1.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates'],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -88,24 +90,23 @@ WSGI_APPLICATION = "python_apps_django1.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'memo_db',   # さっき作ったDB名
-        #'USER': 'root',      # ユーザー名
-        #'PASSWORD': '',      # パスワードなしなら空欄
-        #'HOST': 'localhost', # 通常これでOK
-        #'PORT': '3306',      # MySQLのデフォルトポート
-        'OPTIONS': {
-            'charset': 'utf8mb4',
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "memo_db",  # さっき作ったDB名
+        "USER": "root",  # ユーザー名
+        "PASSWORD": "",  # パスワードなしなら空欄
+        "HOST": "localhost",  # 通常これでOK
+        "PORT": "3306",  # MySQLのデフォルトポート
+        "OPTIONS": {
+            "charset": "utf8mb4",
         },
-        "NAME": DATABASE_NAME,
-        "USER": DATABASE_USER,
-        "PASSWORD": DATABASE_PASSWORD,
-        "HOST": DATABASE_HOST,
-        "PORT": DATABASE_PORT,
+        #"NAME": DATABASE_NAME,
+        #"USER": DATABASE_USER,
+        #"PASSWORD": DATABASE_PASSWORD,
+        #"HOST": DATABASE_HOST,
+        #"PORT": DATABASE_PORT,
     }
 }
-
 
 
 # Password validation
@@ -125,8 +126,8 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        'OPTIONS': {'min_length': 4},
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "OPTIONS": {"min_length": 4},
     },
 ]
 
@@ -148,13 +149,13 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-import os  # すでにあればOK
+# import os  # すでにあればOK
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = '/work10/'
+LOGIN_REDIRECT_URL = "/work10/"

@@ -32,7 +32,7 @@ def simple_qa(request):
     #response = client.chat.completions.create(
      #   model="gpt-4o-mini",  # または "gpt-4o" など
       #  messages=[{"role": "user", "content": prompt}],
-    )
+   # )
     #return HttpResponse(f"<pre>{response.choices[0].message.content}</pre>")
 
 

@@ -25,11 +25,11 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("work07.urls")),
     path("work08/", include("work08.urls")),
-    path('todo/', include('work09.urls')),
-    path('work09/', include('work09.urls')),
-    path('work10/', include('work10.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('work10.urls')), 
+    path("todo/", include("work09.urls")),
+    path("work09/", include("work09.urls")),
+    path("work10/", include("work10.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("work10.urls")),
 ]
 
 if settings.DEBUG:
