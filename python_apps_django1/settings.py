@@ -109,7 +109,7 @@ DATABASES = {
         "PORT": "3306",  # MySQLのデフォルトポート
         "OPTIONS": {
             "charset": "utf8mb4",
-            'unix_socket': '/tmp/mysql.sock',  
+            'mysqlx_socket': '/tmp/mysql.sock',  
         },
         # "NAME": DATABASE_NAME,
         # "USER": DATABASE_USER,
