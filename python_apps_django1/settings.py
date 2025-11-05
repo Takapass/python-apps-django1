@@ -68,6 +68,13 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+# setup basicauth middleware
+if os.environ.get("ENABLE_BASIC_AUTH") or "false" == "true":
+    MIDDLEWARE.append("basicauth.middleware.BasicAuthMiddleware")
+    BASICAUTH_USERS = {
+        os.environ.get("BASIC_AUTH_USERNAME"): os.environ.get
+        ("BASIC_AUTH_PASSWORD"),
+    }
 
 ROOT_URLCONF = "python_apps_django1.urls"
 
