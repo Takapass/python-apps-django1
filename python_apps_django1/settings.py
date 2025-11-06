@@ -101,21 +101,22 @@ WSGI_APPLICATION = "python_apps_django1.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "memo_db",  # さっき作ったDB名
-        "USER": "root",  # ユーザー名
-        "PASSWORD": "",  # パスワードなしなら空欄
-        "HOST": "localhost",  # 通常これでOK
-        "PORT": "3306",  # MySQLのデフォルトポート
+        'ENGINE': 'django.db.backends.postgresql',
+        # "ENGINE": "django.db.backends.mysql",
+        "NAME": DATABASE_NAME,
+        "USER": DATABASE_USER,
+        "PASSWORD": DATABASE_PASSWORD,
+        "HOST": DATABASE_HOST,
+        "PORT": DATABASE_PORT,
+        # "NAME": "memo_db",  # さっき作ったDB名
+        # "USER": "root",  # ユーザー名
+        # "PASSWORD": "",  # パスワードなしなら空欄
+        # "HOST": "localhost",  # 通常これでOK
+        # "PORT": "3306",  # MySQLのデフォルトポート
         "OPTIONS": {
             "charset": "utf8mb4",
             "mysqlx_socket": "/tmp/mysql.sock",
         },
-        # "NAME": DATABASE_NAME,
-        # "USER": DATABASE_USER,
-        # "PASSWORD": DATABASE_PASSWORD,
-        # "HOST": DATABASE_HOST,
-        # "PORT": DATABASE_PORT,
     }
 }
 
