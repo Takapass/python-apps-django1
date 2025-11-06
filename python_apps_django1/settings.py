@@ -71,9 +71,7 @@ MIDDLEWARE = [
 if os.environ.get("ENABLE_BASIC_AUTH") or "false" == "true":
     MIDDLEWARE.append("basicauth.middleware.BasicAuthMiddleware")
     BASICAUTH_USERS = {
-        os.environ.get("BASIC_AUTH_USERNAME"): os.environ.get(
-            "BASIC_AUTH_PASSWORD"
-            ),
+        os.environ.get("BASIC_AUTH_USERNAME"): os.environ.get("BASIC_AUTH_PASSWORD"),
     }
 
 ROOT_URLCONF = "python_apps_django1.urls"
@@ -103,16 +101,11 @@ DATABASES = {
     "default": {
         # 'ENGINE': 'django.db.backends.postgresql',
         "ENGINE": "django.db.backends.mysql",
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
-        # "NAME": DATABASE_NAME,
-        # "USER": DATABASE_USER,
-        # "PASSWORD": DATABASE_PASSWORD,
-        # "HOST": DATABASE_HOST,
-        # "PORT": DATABASE_PORT,
+        "NAME": DATABASE_NAME,
+        "USER": DATABASE_USER,
+        "PASSWORD": DATABASE_PASSWORD,
+        "HOST": DATABASE_HOST,
+        "PORT": DATABASE_PORT,
         # "NAME": "memo_db",  # さっき作ったDB名
         # "USER": "root",  # ユーザー名
         # "PASSWORD": "",  # パスワードなしなら空欄
@@ -135,20 +128,16 @@ AUTH_PASSWORD_VALIDATORS = [
         "UserAttributeSimilarityValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation."
-        "MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation." "MinimumLengthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation."
-        "CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation." "CommonPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation."
-        "NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation." "NumericPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation."
-        "MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation." "MinimumLengthValidator",
         "OPTIONS": {"min_length": 4},
     },
 ]
