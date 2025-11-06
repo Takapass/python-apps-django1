@@ -113,7 +113,7 @@ DATABASES = {
         # "PORT": "3306",  # MySQLのデフォルトポート
         "OPTIONS": {
             "charset": "utf8mb4",
-            "mysqlx_socket": "/tmp/mysql.sock",
+            # "mysqlx_socket": "/tmp/mysql.sock",
         },
     }
 }
