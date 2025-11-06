@@ -32,9 +32,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = (
-    "django-insecure-uj8#(!q5y=yj0*#-y^+hoy#h#&jmtfm9w4*tv=cburqtxn91m5"
-)
+SECRET_KEY = "django-insecure-uj8#(!q5y=yj0*#-y^+hoy#h#&jmtfm9w4*tv"
+"=cburqtxn91m5"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,8 +71,9 @@ MIDDLEWARE = [
 if os.environ.get("ENABLE_BASIC_AUTH") or "false" == "true":
     MIDDLEWARE.append("basicauth.middleware.BasicAuthMiddleware")
     BASICAUTH_USERS = {
-        os.environ.get("BASIC_AUTH_USERNAME"): os.environ.get
-        ("BASIC_AUTH_PASSWORD"),
+        os.environ.get("BASIC_AUTH_USERNAME"): os.environ.get(
+            "BASIC_AUTH_PASSWORD"
+            ),
     }
 
 ROOT_URLCONF = "python_apps_django1.urls"
@@ -109,7 +109,7 @@ DATABASES = {
         "PORT": "3306",  # MySQLのデフォルトポート
         "OPTIONS": {
             "charset": "utf8mb4",
-            'mysqlx_socket': '/tmp/mysql.sock',  
+            "mysqlx_socket": "/tmp/mysql.sock",
         },
         # "NAME": DATABASE_NAME,
         # "USER": DATABASE_USER,
