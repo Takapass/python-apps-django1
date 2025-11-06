@@ -101,13 +101,18 @@ WSGI_APPLICATION = "python_apps_django1.wsgi.application"
 
 DATABASES = {
     "default": {
-        'ENGINE': 'django.db.backends.postgresql',
-        # "ENGINE": "django.db.backends.mysql",
-        "NAME": DATABASE_NAME,
-        "USER": DATABASE_USER,
-        "PASSWORD": DATABASE_PASSWORD,
-        "HOST": DATABASE_HOST,
-        "PORT": DATABASE_PORT,
+        # 'ENGINE': 'django.db.backends.postgresql',
+        "ENGINE": "django.db.backends.mysql",
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+        # "NAME": DATABASE_NAME,
+        # "USER": DATABASE_USER,
+        # "PASSWORD": DATABASE_PASSWORD,
+        # "HOST": DATABASE_HOST,
+        # "PORT": DATABASE_PORT,
         # "NAME": "memo_db",  # さっき作ったDB名
         # "USER": "root",  # ユーザー名
         # "PASSWORD": "",  # パスワードなしなら空欄
