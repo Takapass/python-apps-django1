@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>AI提案 | HealthMate</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+    <h1>💡 AIトレーニング&献立提案</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">AIに提案してもらう</button>
+    </form>
+
+    {% if result %}
+        <hr>
+        <h2>🧠 AIの提案結果：</h2>
+        <div class="result-box">
+            <pre>{{ result }}</pre>
+        </div>
+    {% endif %}
+
+    <p><a href="/">← トップへ戻る</a></p>
+</body>
+</html>
