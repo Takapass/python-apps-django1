@@ -50,12 +50,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "work06",
-    # "work07",
-    # "work08",
-    # "work09",
-    # "work10",
-    # "work11",
+    "work06",
+    "work07",
+    "work08",
+    "work09",
+    "work10",
+    "work11",
     "chat",
 ]
 
@@ -104,7 +104,8 @@ DATABASES = {
     "default": {
         # 'ENGINE': 'django.db.backends.postgresql',
         "ENGINE": "django.db.backends.mysql",
-        "NAME": DATABASE_NAME,
+        'NAME': BASE_DIR / 'db.sqlite3',
+        # "NAME": DATABASE_NAME,
         "USER": DATABASE_USER,
         "PASSWORD": DATABASE_PASSWORD,
         "HOST": DATABASE_HOST,
@@ -179,4 +180,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = "/work10/"
+# LOGIN_REDIRECT_URL = "/work10/"
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/rooms/'
+
+ASGI_APPLICATION = "chat_project.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {"hosts": [("127.0.0.1", 6379)]},
+    },
+}
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

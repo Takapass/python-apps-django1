@@ -19,19 +19,25 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.shortcuts import redirect
+
+
+def redirect_to_rooms(request):
+    return redirect('room_list')
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # path("", include("work06.urls")),
-    # path("", include("work07.urls")),
-    # path("work08/", include("work08.urls")),
-    # path("todo/", include("work09.urls")),
-    # path("work09/", include("work09.urls")),
-    # path("work10/", include("work10.urls")),
-    # path("accounts/", include("django.contrib.auth.urls")),
-    # path("accounts/", include("work11.urls")),
-    path("", include("chat.urls")),
+    path('', redirect_to_rooms),
+    path('', include('chat.urls')),
+    path("", include("work06.urls")),
+    path("", include("work07.urls")),
+    path("work08/", include("work08.urls")),
+    path("todo/", include("work09.urls")),
+    path("work09/", include("work09.urls")),
+    path("work10/", include("work10.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("work11.urls")),
     ]
 
 if settings.DEBUG:
