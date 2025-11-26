@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -139,10 +139,10 @@
     </style>
 </head>
 
-<body> -->
+<body>
 
     <!-- ◆ トーク画面 ---------------------------------------- -->
-    <!-- <div class="screen active" id="chat">
+    <div class="screen active" id="chat">
         <div class="chat-header">
             <div class="back-btn" onclick="showScreen('rooms')">&lt;Back</div>
             <span>トークルーム名</span>
@@ -153,10 +153,10 @@
             <input id="msgText" type="text" placeholder="メッセージを入力">
             <button onclick="sendMessage()">送信</button>
         </div>
-    </div> -->
+    </div>
 
     <!-- ◆ トークルーム一覧 -------------------------------- -->
-    <!-- <div class="screen" id="rooms">
+    <div class="screen" id="rooms">
         <div class="profile" onclick="showScreen('profile')">
             <img src="">
             <p>プロフィール文が入ります</p>
@@ -166,20 +166,20 @@
             <div class="room" onclick="showScreen('chat')">作ったトークルーム</div>
             <div class="room" onclick="showScreen('settings')">トークルームを作成</div>
         </div>
-    </div> -->
+    </div>
 
     <!-- ◆ プロフィール -------------------------------------- -->
-    <!-- <div class="screen" id="profile">
+    <div class="screen" id="profile">
         <div class="profile">
             <img src="">
             <p>プロフィールテキスト</p>
             <div class="profile-btn" onclick="showScreen('settings')">設定へ</div>
             <div class="profile-btn" onclick="showScreen('rooms')">戻る</div>
         </div>
-    </div> -->
+    </div>
 
     <!-- ◆ 設定 ---------------------------------------------- -->
-    <!-- <div class="screen" id="settings">
+     <div class="screen" id="settings">
         <div class="chat-header">
             <div class="back-btn" onclick="showScreen('profile')">&lt;Back</div>
             <span>設定</span>
@@ -211,17 +211,17 @@
 </body>
 
 </html>
- -->
+ 
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>work07 トップページ</title>
-  <link rel="stylesheet" href="/static/chat/style.css">
+  <title>chat トップページ</title>
+  <link rel="stylesheet" href="/static/chat">
 </head>
 <body>
-  <h1>ミニゲーム集 🎮</h1>
+  <h1>チャット</h1>
   <ul>
     <li><a href="{% url 'chat' %}">チャット</a></li>
     <li><a href="{% url 'create_room' %}">ルーム作成</a></li>
@@ -229,4 +229,4 @@
     <li><a href="{% url 'rooms' %}">トークルーム一覧</a></li>
   </ul>
 </body>
-</html>
+</html> 
