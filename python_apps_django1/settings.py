@@ -50,12 +50,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "work06",
-    "work07",
-    "work08",
-    "work09",
-    "work10",
-    "work11",
+    # "work06",
+    # "work07",
+    # "work08",
+    # "work09",
+    # "work10",
+    # "work11",
     "chat",
 ]
 
