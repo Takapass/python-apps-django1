@@ -31,7 +31,7 @@ urlpatterns = [
     # path("work10/", include("work10.urls")),
     # path("accounts/", include("django.contrib.auth.urls")),
     # path("accounts/", include("work11.urls")),
-    path("chat", include("chat.urls")),
+    path("", include("chat.urls")),
     ]
 
 if settings.DEBUG:
