@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Room, Message
+from chat.forms import ProfileForm, RoomForm
+from .models import Room, Message, Profile
+
+
+def index(request):
+    return render(request, "chat/index.html")
 
 
 @login_required
